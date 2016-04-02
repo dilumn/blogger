@@ -2,7 +2,45 @@
 
 Blogger API implementation for Ruby
 
-Still on Development
+## Installation
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'bloggerapi'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install bloggerapi
+
+## Usage
+
+First of all
+
+`require 'Blogger' `
+
+Initialize `Blogger::Configuration` object with your API Key
+
+Configuration
+```ruby
+@blogger = Blogger::Configuration.new do |config|
+      config.key        = "YOUR_API_KEY"
+      config.max_result = 100
+      config.blog_id = "BLOG_ID" //Blog id to get posts
+    end
+```
+
+Then fetch posts for the relevent blog
+```ruby
+posts = @blogger.get_blogposts
+```
+
+Posts is an array containing list of Blog posts.
 
 ## Development
 
